@@ -28,7 +28,7 @@
                     var diff = now.getTime() - start.getTime() + now.getTimezoneOffset() * 60 * 1000;
                     var oneDay = 1000 * 60 * 60 * 24;
                     var day = Math.floor(diff / oneDay);
-                    var url = 'http://www.ssd.noaa.gov/goes/west/nw/img/2017' + day + '_' + fmt.format(now.getUTCHours()) + fmt.format(now.getUTCMinutes()) + 'rgb.jpg';
+                    var url = 'http://www.ssd.noaa.gov/goes/west/nw/img/2019' + day + '_' + fmt.format(now.getUTCHours()) + fmt.format(now.getUTCMinutes()) + 'rgb.jpg';
                     var img = document.createElement("img");
                     img.setAttribute('id', 'img'+i);
                     img.setAttribute('class', 'slide');
