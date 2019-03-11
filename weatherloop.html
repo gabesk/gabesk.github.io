@@ -14,6 +14,10 @@
             var time_back = 250;
             var i = time_back - 1;
             var max = 0;
+            function pad(num) {
+                var s = "0" + num;
+                return s.substr(s.length-3);
+            }
             function load() {
                 var fmt = new Intl.NumberFormat('en-us', { minimumIntegerDigits: 2 });
                 // Create now, but round to the hour.
@@ -28,7 +32,8 @@
                     var diff = now.getTime() - start.getTime() + now.getTimezoneOffset() * 60 * 1000;
                     var oneDay = 1000 * 60 * 60 * 24;
                     var day = Math.floor(diff / oneDay);
-                    var url = 'https://www.ssd.noaa.gov/goes/west/nw/img/2019' + day + '_' + fmt.format(now.getUTCHours()) + fmt.format(now.getUTCMinutes()) + 'rgb.jpg';
+                    var url = 'http://www.ssd.noaa.gov/goes/west/nw/img/2019' + pad(day) + '_' + fmt.format(now.getUTCHours()) + fmt.format(now.getUTCMinutes()) + 'rgb.jpg';
+                    //alert(url);
                     var img = document.createElement("img");
                     img.setAttribute('id', 'img'+i);
                     img.setAttribute('class', 'slide');
